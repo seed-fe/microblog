@@ -7,10 +7,12 @@
 // });
 
 // module.exports = router;
-
+var crypto = require('crypto');
 module.exports = function(app) {
 	app.get('/', function(req, res) {
-		res.render('index', {title: 'Express'});
+		res.render('index', {
+			title: '首页'
+		});
 	});
 	app.get('/u/:user', function(req, res) {
 
@@ -19,7 +21,9 @@ module.exports = function(app) {
 
 	});
 	app.get('/reg', function(req, res) {
-
+		res.render('reg', {
+			title: '用户注册'
+		});
 	});
 	app.post('/reg', function(req, res) {
 
