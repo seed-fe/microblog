@@ -1,4 +1,5 @@
 var express = require('express');
+// var browserSync =require('browser-sync');
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
@@ -48,3 +49,15 @@ routes(app);
 app.listen(app.get('port'), function() {
   console.log('Express server listening on port ' + app.get('port'));
 });
+
+
+// 这种方式如果修改后端部分js代码会在浏览器中重新打开一个窗口
+// app.listen(app.get('port'), listening);
+
+// function listening () {
+//   browserSync.init({
+//     proxy: 'http://localhost:' + app.get('port'),
+//     files: ["public/**.*", "views/**", "routes/**"],
+//     port: 8080
+//   });
+// }*/
